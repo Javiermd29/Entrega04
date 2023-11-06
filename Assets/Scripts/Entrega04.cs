@@ -11,7 +11,7 @@ public class Entrega04 : MonoBehaviour
     //Exercise 2
     [SerializeField] private string letter = "b";
 
-    //Exercise 3
+    //Exercise 3/5/6
     [SerializeField] private int day;
     [SerializeField] private int month;
     [SerializeField] private int year;
@@ -38,6 +38,8 @@ public class Entrega04 : MonoBehaviour
         ex2();
         ex3(-2, 2, 1997);
         ex4(1996);
+        ex5(31, 12, 1997);
+        ex6(1, 1, 1998);
         ex7(1997);
         ex8(3.8f, 16.8f);
         ex9(8.2f);
@@ -101,6 +103,75 @@ public class Entrega04 : MonoBehaviour
         else
         {
             Debug.Log(LeapYear + " no es un año bisiesto");
+        }
+
+    }
+
+    private void ex5(int day, int month, int year)
+    {
+
+        if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) && day == 31)
+        {
+            day = 1;
+            month = month + 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        } else if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 30)
+        {
+            day = 1;
+            month = month + 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        } else if (month == 2 && day == 28)
+        {
+            day = 1;
+            month = month + 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        } else if (month == 12 && day == 31)
+        {
+            day = 1;
+            month = 1;
+            year = year + 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+        else
+        {
+            day = day + 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+
+    }
+
+    private void ex6(int day, int month, int year)
+    {
+
+        if ((month == 2 || month == 4 || month == 6 || month == 8 || month == 9 || month == 11) && day == 1)
+        {
+            day = 31;
+            month = month -1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+        else if ((month == 5 || month == 7 || month == 10 || month == 12) && day == 1)
+        {
+            day = 30;
+            month = month -1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+        else if (month == 3 && day == 1)
+        {
+            day = 28;
+            month = month - 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+        else if (month == 1 && day == 1)
+        {
+            day = 31;
+            month = 12;
+            year = year - 1;
+            Debug.Log(day + "/" + month + "/" + year);
+        }
+        else
+        {
+            day = day - 1;
+            Debug.Log(day + "/" + month + "/" + year);
         }
 
     }

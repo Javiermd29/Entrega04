@@ -248,6 +248,9 @@ MonoBehaviour:
   month: 8
   year: 1997
   LeapYear: 1996
+  day2: 2
+  month2: 2
+  year2: 1997
   ChineseYear: 1997
   base8: 8.9
   height: 16.7
